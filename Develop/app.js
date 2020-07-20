@@ -13,7 +13,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-const team = [];
+let team = [];
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
@@ -57,7 +57,7 @@ const buildTeam = ()=>{
       inquirer.prompt([
         {
             type: 'list',
-            name: 'employeeOptions',
+            name: 'empCategory',
             message: 'Do you wanna add an employee?',
             choices: [
                 'Engineer',
@@ -66,7 +66,7 @@ const buildTeam = ()=>{
             ],
         },
     ]).then((answer)=>{
-        switch(answer.employeeOptions){
+        switch(answer.empCategory){
             case 'Engineer':
                 engineerInfo();
                 break;
@@ -151,8 +151,8 @@ const internInfo = ()=>{
 }
 
 
+const writeTeam = () =>{
     const htmlInfo = render(team);
-    const writeTeam = () =>{
         writeFileAsync(outputPath, htmlInfo, (err)=>{
             if(err){
                 console.log(err);
