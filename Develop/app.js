@@ -4,15 +4,165 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const util = require('util');
+
+const writeFileAsync = util.promisify(fs.writeFile);
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const team = [];
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+
+
+const managerInfo = () =>{
+     inquirer.prompt([
+        {
+            type: 'input',
+            name: 'managerName',
+            message: 'Enter your name'
+        },
+        {
+            type: 'input',
+            name: 'managerEmail',
+            message: 'Enter your email'
+        },
+        {
+            type: 'input',
+            name: 'managerId',
+            message: 'Enter your ID'
+        },
+        {
+            type: 'input',
+            name: 'managerOfficeNumber',
+            message: 'Enter your office number'
+        }
+    ]).then((answers)=>{
+        const manager = new Manager(
+            answers.managerName,
+            answers.managerEmail,
+            answers.managerId,
+            answers.managerOfficeNumber
+        );
+        team.push(manager);
+        buildTeam();
+    });
+}
+
+const buildTeam = ()=>{
+      inquirer.prompt([
+        {
+            type: 'list',
+            name: 'employeeOptions',
+            message: 'Do you wanna add an employee?',
+            choices: [
+                'Engineer',
+                'Intern',
+                'Stop'
+            ],
+        },
+    ]).then((answer)=>{
+        switch(answer.employeeOptions){
+            case 'Engineer':
+                engineerInfo();
+                break;
+            case 'Intern':
+                internInfo();
+                break;
+            default:
+                writeTeam();
+        }
+    });
+}
+
+const engineerInfo = ()=>{
+     inquirer.prompt([
+        {
+            type: 'input',
+            name: 'engineerName',
+            message: 'Enter your name'
+        },
+        {
+            type: 'input',
+            name: 'engineerEmail',
+            message: 'Enter your email'
+        },
+        {
+            type: 'input',
+            name: 'engineerId',
+            message: 'Enter your ID'
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Provide your github repo.'
+        }
+    ]).then((answers) =>{
+        const engineer = new Engineer(
+            answers.engineerName,
+            answers.engineerEmail,
+            answers.engineerId,
+            answers.github
+        );
+        team.push(engineer);
+        buildTeam();
+    })
+    
+
+}
+
+const internInfo = ()=>{
+     inquirer.prompt([
+        {
+            type: 'input',
+            name: 'internName',
+            message: 'Enter your name'
+        },
+        {
+            type: 'input',
+            name: 'internEmail',
+            message: 'Enter your email'
+        },
+        {
+            type: 'input',
+            name: 'internID',
+            message: 'Enter your ID'
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'Enter your school name.'
+        }
+    ]).then((answers)=>{
+        const intern = new Intern(
+            answers.internName,
+            answers.internEmail,
+            answers.internID,
+            answers.school
+        );
+        team.push(intern);
+        buildTeam();
+    })
+    
+}
+
+
+    const htmlInfo = render(team);
+    const writeTeam = () =>{
+        writeFileAsync(outputPath, htmlInfo, (err)=>{
+            if(err){
+                console.log(err);
+            } else{
+                console.log('Done');
+            }
+        });
+    };
+
+managerInfo();
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
@@ -33,3 +183,5 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+// function to initialize program
