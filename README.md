@@ -1,6 +1,6 @@
  # Employee Team Generator   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
  ## Description
- This CLI app allows the emplyer to create a card with all of their employee's names and information and display it on their web page. 
+ This CLI app allows the employer to create a card with all of their employee's names and information and display it on their web page. 
  ## Table of Contents
  <!--ts-->
   * [Installation](#Installation)
