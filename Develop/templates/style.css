@@ -1,8 +1,12 @@
+
+body{
+background-color: #f4ece2;
+}
 .jumbotron{
-    background-color: #b68440;
+    background-color: #bde2e4;
 }
 .card-header{
-    background-color: #c8cbc7;
+    background-color: #6bd3e0;
 }
 
 .employee-card{
