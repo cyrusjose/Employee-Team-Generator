@@ -16,6 +16,7 @@
  * npm i jest
  ## Usage
  Ensure that inquirer and jest are installed. This allows the user to test the app by running npm run test to see if there are any issues with the code. Make sure that you are in the Develop directory by typing cd Develop in the CL, then run the app by typing in node app.js.
+ <img src = "./Assets/Screen Shot 2020-07-19 at 10.03.11 PM.png">
  ### Walkthrough Video
  * https://drive.google.com/file/d/1xP-B5BNLCJl8_FmwLk9c164KucM9MHug/view
 
