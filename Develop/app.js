@@ -44,8 +44,8 @@ const managerInfo = () =>{
     ]).then((answers)=>{
         const manager = new Manager(
             answers.managerName,
-            answers.managerEmail,
             answers.managerId,
+            answers.managerEmail,
             answers.managerOfficeNumber
         );
         team.push(manager);
