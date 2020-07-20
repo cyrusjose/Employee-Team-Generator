@@ -7,7 +7,6 @@
   * [Usage](#Usage)
   * [Tests](#Tests)
   * [License](#License)
-  * [Questions](#Questions)
  <!--te-->
  ## Installation
  Installation requirement(s) 
