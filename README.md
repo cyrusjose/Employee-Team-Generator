@@ -5,7 +5,6 @@
  <!--ts-->
   * [Installation](#Installation)
   * [Usage](#Usage)
-  * [Contributions](#Contributions)
   * [Tests](#Tests)
   * [License](#License)
   * [Questions](#Questions)
