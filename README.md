@@ -11,12 +11,14 @@
   * [Questions](#Questions)
  <!--te-->
  ## Installation
- Installation requirement(s) [Add more as necessary]: 
+ Installation requirement(s) 
  * npm i inquirer
+ * npm i jest
  ## Usage
  Ensure that inquirer and jest are installed. This allows the user to test the app by running npm run test to see if there are any issues with the code. Make sure that you are in the Develop directory by typing cd Develop in the CL, then run the app by typing in node app.js.
- ## Contributions
- no
+ ### Walkthrough Video
+ * https://drive.google.com/file/d/1xP-B5BNLCJl8_FmwLk9c164KucM9MHug/view
+
  ## Tests
  Here is the code to run a test.
  ```
@@ -25,10 +27,5 @@
  ## License
  The chosen license for this application is MIT. Please follow the link below for more imformation about the license.
  * https://opensource.org/licenses/MIT
- ## Questions
- If you have any further questions please feel free to reach out to me at any of the following: 
+ 
 
- * https://github.com/cyrusjose
- * cyrus.jose@outlook.com
-
-https://drive.google.com/file/d/1xP-B5BNLCJl8_FmwLk9c164KucM9MHug/view
