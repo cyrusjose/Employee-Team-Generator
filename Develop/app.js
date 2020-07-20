@@ -63,8 +63,8 @@ const buildTeam = ()=>{
                 'Engineer',
                 'Intern',
                 'Stop'
-            ],
-        },
+            ]
+        }
     ]).then((answer)=>{
         switch(answer.empCategory){
             case 'Engineer':
@@ -146,8 +146,7 @@ const internInfo = ()=>{
         );
         team.push(intern);
         buildTeam();
-    })
-    
+    }) 
 }
 
 

@@ -4,3 +4,12 @@
 .card-header{
     background-color: #c8cbc7;
 }
+
+.employee-card{
+    width: 300px;
+    max-width: 500px;
+    box-shadow: 5px 5px 15px 0;
+}
+.col{
+    flex-grow: 0;
+}
